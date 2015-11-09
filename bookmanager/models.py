@@ -2,7 +2,7 @@ from django.db import models
 
 class Author(models.Model):
 	AuthorID = models.CharField(max_length=30, primary_key=True)
-	Name = models.CharField(max_length=30)
+	Name = models.CharField(max_length=100)
 	Age = models.IntegerField()
 	Country = models.CharField(max_length=30)
 	def __str__(self):

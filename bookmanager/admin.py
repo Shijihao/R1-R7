@@ -3,7 +3,7 @@ from django.contrib import admin
 from bookmanager.models import Author, Book
 
 class BookAdmin(admin.ModelAdmin):
-	fields = ('ISBN', 'Title', 'AuthorID', 'Publisher', 'PublishDate', 'Price')
+	fields = ('ISBN', 'Title', 'AuthorID', 'PublishDate', 'Price')
 	
 class AuthorAdmin(admin.ModelAdmin):
 	fields = ('AuthorID', 'Name', 'Age', 'Country')

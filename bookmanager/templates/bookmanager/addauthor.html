@@ -1,0 +1,10 @@
+<ul style="list-style-type:none">
+  <form action="." method='POST'>
+  {% csrf_token %}
+  <li>AuthorID: <input type='text' name='add_AuthorID' /></li> 
+  <li>Name: <input type='text' name='add_Name' /></li> 
+  <li>Age: <input type='text' name='add_Age' /></li>
+  <li>Country: <input type='text' name='add_Country' /></li>
+  <input type='submit' value='Save'/>
+  </form>      
+</ul>

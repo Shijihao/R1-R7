@@ -1,0 +1,11 @@
+<ul style="list-style-type:none">
+  <form action="." method='POST'>
+  {% csrf_token %}
+  <input type='hidden' name='update_book_ISBN' value={{ book_detail.ISBN }} />
+  <li>AuthorID: <input type='text' name='update_AuthorID' value={{ book_detail.AuthorID }} /></li> 
+  <li>Publisher: <input type='text' name='update_Publisher' value="{{ book_detail.Publisher }}" /></li> 
+  <li><td>PublishDate: <input type='text' name='update_PublishDate' value ={{book_detail.PublishDate|date:"Y-m-d"}} /></td></li>
+  <li>Price: <input type='text' name='update_Price' value={{ book_detail.Price }} /></li>
+  <input type='submit' value='Save'/>
+  </form>      
+</ul>

@@ -1,0 +1,19 @@
+{% if book_detail %}
+    <ul style="list-style-type:none">
+        <li>Title: {{ book_detail.Title }}</li>
+	    <li>ISBN: {{ book_detail.ISBN }}</li>
+	    <li>AuthorID: {{ book_detail.AuthorID }}</li> 
+	    <li>Publisher: {{ book_detail.Publisher }}</li> 
+	    <li>PublishDate: {{ book_detail.PublishDate }}</li> 
+	    <li>Price: {{ book_detail.Price }}</li>      
+    </ul>
+    <span>Author: </span>
+   	<ul style="list-style-type:none">
+   		<li>Name: {{author_detail.Name}}</li>
+   		<li>Age: {{author_detail.Age}}</li>
+   		<li>Country: {{author_detail.Country}}</li>
+   	</ul>
+
+{% else %}
+    <p>No books are available.</p>
+{% endif %}

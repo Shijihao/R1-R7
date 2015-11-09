@@ -1,0 +1,12 @@
+<ul style="list-style-type:none">
+  <form action="." method='POST'>
+  {% csrf_token %}
+  <li>ISBN: <input type='text' name='add_ISBN' /></li>
+  <li>Title: <input type='text' name='add_Title' /></li>
+  <li>AuthorID: <input type='text' name='add_AuthorID' /></li> 
+  <li>Publisher: <input type='text' name='add_Publisher' /></li> 
+  <li><td>PublishDate: <input type='text' name='add_PublishDate' /></td></li>
+  <li>Price: <input type='text' name='add_Price'  /></li>
+  <input type='submit' value='Save'/>
+  </form>      
+</ul>

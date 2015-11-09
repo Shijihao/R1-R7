@@ -1,0 +1,57 @@
+<html>
+{% if book_list %}
+<table>
+    {% csrf_token %} {% for i in book_list %}
+    <ul>
+        <tr>
+            <td>
+                <li><a href="{% url 'bookmanager:detail' i.ISBN %}">{{ i.Title }}</a></li>
+            </td>
+            <td>
+                <form action='delete/' method='GET' style='display:inline'>
+                    <input type='hidden' name='delete_book_ISBN' value={{ i.ISBN }} />
+                    <input type='submit' value='Delete' />
+                </form>
+            </td>
+            <td>
+                <form action='update/' method='GET' style='display:inline'>
+                    <input type='hidden' name='update_book_ISBN' value={{ i.ISBN }} />
+                    <input type='submit' value='Update' />
+                </form>
+            </td>
+        </tr>
+    </ul>
+    {% endfor %}
+</table>
+{% else %}
+<p>No books are available.</p>
+{% endif %}
+
+<form action='addauthor/' method='GET' style='display:inline'>
+    <input type='submit' value='Add author' />
+</form>
+
+<form action='addbook/' method='GET' style='display:inline'>
+    <input type='submit' value='Add book' />
+</form>
+
+<p>Input Author Name:</p>
+<form action="." method='POST'>
+    {% csrf_token %}
+    <input type='text' name='author_name' />
+    <input type='submit' value='Book Search' />
+</form>
+
+{% if author_lib %}
+<p>Author {{author_name}}'s book(s)</p>
+<ul>
+    {% for j in author_lib %}
+    <li><a href="{% url 'bookmanager:detail' j.ISBN %}">{{ j.Title }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %} {% if author_empty %}
+<p>Author {{author_name}} not found.</p>
+{% endif %}
+
+    
+</html>
